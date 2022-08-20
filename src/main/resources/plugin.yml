@@ -1,0 +1,17 @@
+name: TeamMaker
+version: '${project.version}'
+main: cat.kagurazaka.TeamMaker.TeamMaker
+api-version: 1.16
+prefix: [ TeamMaker ]
+authors: [ KagurazakaKano ]
+description: Plugin to make teams
+website: https://kagurazaka.cat
+commands:
+  tm:
+    description: TeamMaker Command (Change the team we are making)
+    usage: /tm [teamNumber]
+    permission: teammaker.basic
+permissions:
+  teammaker.maketeam:
+    description: Give access to TeamMaker Command
+    default: op
