@@ -17,6 +17,7 @@ import static cat.kagurazaka.TeamMaker.TeamOptions.getTeamNumber;
  *       Detect if using the right tool & having permission of OP
  *         - If so:
  *           Execute the command
+ *           Set the damage to 0
  *     - If not:
  *       Do Nothing
  */
@@ -29,8 +30,13 @@ public final class Events implements Listener {
             Player damageCauser = (Player) ((EntityDamageByEntityEvent) e).getDamager();
 
             ItemStack itemInMainHand = damageCauser.getInventory().getItemInMainHand();
-            if (isLegalItem(itemInMainHand) && isCauserOP(damageCauser)) {
+            if (isLegalItemForTeamMaking(itemInMainHand) && isCauserOP(damageCauser)) {
                 damageCauser.performCommand("team join " +  getTeamNumber() + " " + damageTaker.getName());
+                e.setDamage(0.0);
+            }
+            if (isLegalItemForTeamLeaving(itemInMainHand) && isCauserOP(damageCauser)) {
+                damageCauser.performCommand("team leave " +  damageTaker.getName());
+                e.setDamage(0.0);
             }
         }
     }
