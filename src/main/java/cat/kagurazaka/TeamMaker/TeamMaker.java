@@ -14,6 +14,7 @@ public final class TeamMaker extends JavaPlugin {
         saveDefaultConfig();
         FileConfiguration config = plugin.getConfig();
         plugin.getServer().getPluginManager().registerEvents(new Events(), plugin);
+        plugin.getCommand("tmake").setExecutor(new TeamOptions());
         plugin.getServer().getLogger().info("Plugin has registered successfully!");
 
     }

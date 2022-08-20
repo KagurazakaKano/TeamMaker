@@ -7,9 +7,9 @@ authors: [ KagurazakaKano ]
 description: Plugin to make teams
 website: https://kagurazaka.cat
 commands:
-  tm:
+  tmake:
     description: TeamMaker Command (Change the team we are making)
-    usage: /tm [teamNumber]
+    usage: /tmake [teamNumber]
     permission: teammaker.basic
 permissions:
   teammaker.maketeam:
