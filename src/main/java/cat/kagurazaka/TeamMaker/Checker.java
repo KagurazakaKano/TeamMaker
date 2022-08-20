@@ -25,14 +25,14 @@ public final class Checker {
     }
 
     public static boolean isLegalItemForTeamMaking(ItemStack item) {
-        if ((item.getType() == Material.STICK) && (item.getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)) && (item.getItemMeta().getEnchantLevel(Enchantment.SILK_TOUCH) == 1)) {
+        if ((item.getType() == Material.STICK) && (item.getItemMeta().hasEnchant(Enchantment.SILK_TOUCH))) {
             return true;
         }
         return false;
     }
 
     public static boolean isLegalItemForTeamLeaving(ItemStack item) {
-        if ((item.getType() == Material.BLAZE_ROD) && (item.getItemMeta().hasEnchant(Enchantment.MENDING)) && (item.getItemMeta().getEnchantLevel(Enchantment.SILK_TOUCH) == 1)) {
+        if ((item.getType() == Material.BLAZE_ROD) && (item.getItemMeta().hasEnchant(Enchantment.MENDING))) {
             return true;
         }
         return false;
